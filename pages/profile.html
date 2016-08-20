@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Aaron Persaud</title>
+<title>Aaron Persaud</title> 
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../node_modules/angular-material/angular-material.js"></script>
+    <script src="../js/app.js"></script>
+
 </head>
 
-<body>
-<div style="border:solid; width:18%;text-align:center;border-radius: 25px;">
-	<img src="../images/profile.png">
-	<h4>Aaron Persaud</h4>
-	<h4>a4persau@uwaterloo.ca</h4>
-	<h4>https://github.com/AaronPersaud</h4>
-	<h4>https://linkedin.com/pub/dir/AaronPersaud</h4>
+<body ng-app="hackTogether" ng-controller="profileCtrl">
+<div>
+	<div style="border:solid;float:left; text-align:center; width:22%;border-radius: 25px;">
+		<img src="../images/profile.png">
+		<h4>{{name}}</h4>
+		<h4>{{email}}</h4>
+		<h4>{{github}}</h4>
+		<h4>{{linkedin}}</h4>
+	</div>
+	<div style="border:solid; margin-left:1%; text-align:center; float:left; width:22%;border-radius: 25px;">
+		<h4>Followers (9)</h4>
+		<table align="center">
+			<tr>
+			<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			</tr>
+			<tr>
+				<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			</tr>
+			<tr>
+				<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			<td><img src="../images/profile.png" width="75px"></td>
+			</tr>
+		</table>
+	</div>
 </div>
 <br>
+<div style="margin-top:22%">
 <div style="border:solid;height:150px;text-align:center;border-radius: 25px;">
 	<h3>Skills</h3>
-	<button>HTML</button><button>CSS</button><button>Javascript</button>
+	<button ng-repeat="skill in skills">{{skill}}</button>
 </div>
 <br>
-<div style="border:solid;height:250px;border-radius: 25px;">
+<div style="border:solid;height:200px;border-radius: 25px;">
 	<div style="height:40px; text-align:center">
 	  <h3>Hackathons</h3> 
 	</div>
-	<div style="height:210px; padding-top:10px; text-align:center">
-		<img src="../images/htn.png" style="max-width:80%;max-height:80%;margin-right:20px;">
-		<img src="../images/mch.png" style="max-width:80%;max-height:80%;margin-left:20px;">
+	<div style="height:180px; padding-top:10px; text-align:center">
+		<img src="../images/htn.png" style="max-width:60%;max-height:60%;margin-right:20px;">
+		<img src="../images/mch.png" style="max-width:60%;max-height:60%;margin-left:20px;">
 	</div>
 </div>
-</body>
-
-</html>
+</div>

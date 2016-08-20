@@ -1,0 +1,11 @@
+{
+  "name": "hacktogether",
+  "private": false,
+  "version": "0.0.1",
+  "description": "hack the six project",
+  "respository": "https://github.com/AaronPersaud/hacktogether",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "1.1.0-rc.5"
+  }
+}
