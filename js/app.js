@@ -54,12 +54,12 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
 
 	 ]
 
-   $scope.teams = [{name:"Team Blue Bird",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Molt",skill:"Front-end Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
-                    {name:"Team Zap",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Art",skill:"Front-end Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
-                    {name:"Team Lugia",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Ruby",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+   $scope.teams = [{m1:"Jesse",m2:"James",m3:"Meowth",m4:"Giovanni",t:"To blast off at the speed of light",d:"Surrender now or prepare to fight!",name:"Team Rocket",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {m1:"Leonardo",m2:"Donatello",m3:"Michaelangelo",m4:"Raphael",t:"Eating pizza",d:"Cowabunga",name:"Team Splinter",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {m1:"Aaron",m2:"Abeenesh",m3:"Meyyappan",m4:"Vinoth",t:"coding",d:"coding",name:"Team Zap",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {m1:"Aaron",m2:"Abeenesh",m3:"Meyyappan",m4:"Vinoth",t:"coding",d:"coding",name:"Team Art",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {m1:"Aaron",m2:"Abeenesh",m3:"Meyyappan",m4:"Vinoth",t:"coding",d:"coding",name:"Team Lugia",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {m1:"Aaron",m2:"Abeenesh",m3:"Meyyappan",m4:"Vinoth",t:"coding",d:"coding",name:"Team Ruby",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
                   ];
       $scope.name = null
       $scope.src = null
@@ -79,6 +79,12 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
     console.log(team)
     $scope.name = team.name;
     $scope.src = team.image;
+    $scope.m1 = team.m1;
+    $scope.m2 = team.m2;
+    $scope.m3 = team.m3;
+    $scope.m4 = team.m4;
+    $scope.t = team.t;
+    $scope.d =  team.d;
     // $scope.$apply();
     $('.groups').modal('show');
   }
