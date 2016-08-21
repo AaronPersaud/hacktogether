@@ -40,3 +40,17 @@ hackTogether.controller('profileCtrl', ['$scope', function($scope) {
            });
 
 }]);
+
+hackTogether.controller('membersCtrl', ['$scope', function($scope) {
+	console.log("TEST")
+	 $scope.solos = [
+
+	 	{name:"Abeenesh U",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
+	 	{name:"Aaron",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"},
+	 	{name:"Vinoth",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/vesh.jpg"},
+	 	{name:"Meyyappan",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/mesh.jpg"},
+	 	{name:"Abeenesh U",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
+	 	{name:"Aaron",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"}
+
+	 ]
+}]);
