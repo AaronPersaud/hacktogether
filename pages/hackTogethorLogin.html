@@ -1,0 +1,355 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<!-- Standard Meta -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<!-- Site Properties -->
+		<title>Login Example - Semantic</title>
+		<link rel="stylesheet" type="text/css" href="../dist/components/reset.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/site.css">
+
+		<link rel="stylesheet" type="text/css" href="../dist/components/container.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/grid.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/header.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/image.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
+
+		<link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/form.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/input.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/button.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/list.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/message.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/icon.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/modal.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/dimmer.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/transition.css">
+		<link rel="stylesheet" type="text/css" href="../dist/components/label.css">
+
+		<script src="assets/library/jquery.min.js"></script>
+		<script src="../dist/components/form.js"></script>
+		<script src="../dist/components/transition.js"></script>
+		<script type="text/javascript" src="../dist/components/modal.js"></script>
+		<script type="text/javascript" src="../dist/components/dimmer.js"></script>
+		<script type="text/javascript" src="../dist/components/transition.js"></script>
+		<script type="text/javascript" src="../dist/components/button.js"></script>
+
+		<style type="text/css">
+			body {
+				background-color: #DADADA;
+			}
+			body > .grid {
+				height: 100%;
+			}
+			.image {
+				margin-top: -100px;
+			}
+			.profile_pic{
+				margin-top: 0px;
+			}
+			.column {
+				max-width: 450px;
+			}
+		</style>
+		<script>
+			$( document ).ready(function() {
+				var createCookie = function(name, value, days) {
+					var expires;
+					if (days) {
+						var date = new Date();
+						date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+						expires = "; expires=" + date.toGMTString();
+					}
+					else {
+						expires = "";
+					}
+					document.cookie = name + "=" + value + expires + "; path=/";
+				}
+
+				function getCookie(c_name) {
+					if (document.cookie.length > 0) {
+						c_start = document.cookie.indexOf(c_name + "=");
+						if (c_start != -1) {
+							c_start = c_start + c_name.length + 1;
+							c_end = document.cookie.indexOf(";", c_start);
+							if (c_end == -1) {
+								c_end = document.cookie.length;
+							}
+							return unescape(document.cookie.substring(c_start, c_end));
+						}
+					}
+					return "";
+				}
+				$.ajax({
+					type: "GET",
+					url: 'http://hackthesix.mnachiappan.com/api',
+					contentType: 'application/json;charset=UTF-8',
+					data: {
+						user: "Vinoth", 
+						pass: "Maruthalingam",
+					},
+					dataType: 'jsonp',
+					success: function(data){
+						console.log(data);
+						console.log("success");
+					},
+					error: function(jqXHR, textStatus, errorThrown ){
+						console.log(jqXHR);
+						console.log(textStatus);
+						console.log(errorThrown);
+					}
+				});
+
+
+				
+
+				document.getElementById('register').onclick = function (){
+					$('.ui.modal').modal('show');
+					console.log(getCookie("hack"))
+				}
+
+				document.getElementById('add_skills').onclick = function (){
+					var skills = document.getElementById('skills').innerHTML;
+					var new_skill = document.getElementById('new_skill').value;
+					if (new_skill.trim().length != 0){
+						skills = skills + "<a class='ui label'>" + new_skill + "</a>";
+						document.getElementById('skills').innerHTML = skills
+					}
+					document.getElementById('register_send').onclick = function(){
+						$.ajax({
+							type: "GET",
+							url: 'http://hackthesix.mnachiappan.com/api/users',
+							contentType: 'application/json;charset=UTF-8',
+							data: {
+								fistName: "Vinoth", 
+								lastName: "Maruthalingam",
+								gender: "Male",
+								age: "21", 
+								grad: "2018",
+								email: "@waterloo.ca",
+								school: "loo",
+								desc: "blah abl",
+								github: "@",
+								linkedin: "@",
+								skills: ["Java", "Python"]
+							},
+							dataType: 'jsonp',
+							success: function(data){
+								console.log(data);
+								console.log(data["docs"]["insertedIds"][0]);
+								createCookie("hack", data["docs"]["insertedIds"][0], 2)
+								console.log("success");
+							},
+							error: function(jqXHR, textStatus, errorThrown ){
+								console.log(jqXHR);
+								console.log(textStatus);
+								console.log(errorThrown);
+							}
+						});	
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+
+		<div class="ui middle aligned center aligned grid">
+			<div class="column">
+				<h2 class="ui teal image header">
+					<img src="assets/images/hackTheSix.png" class="image">
+					<div class="content">
+						Let's hackTogether! 
+					</div>
+				</h2>
+				<form class="ui large form">
+					<div class="ui stacked segment">
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="user icon"></i>
+								<input type="text" name="email" placeholder="E-mail address">
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui left icon input">
+								<i class="lock icon"></i>
+								<input type="password" name="password" placeholder="Password">
+							</div>
+						</div>
+						<div class="ui fluid large teal submit button">Login</div>
+					</div>
+					<div class="ui error message"></div>
+				</form>
+				<div class="ui message" id="register">
+					New to us? <a href="#">Register</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui modal">
+			<div class="image content">
+				<div class="ui medium image profile_pic">
+					<img src="assets/images/avatar/tom.jpg">
+				</div>
+				<div class="description">
+					<div class="ui header">Profile View</div>
+					<div class="ui form">
+						<div class="two fields">
+							<div class="field">
+								<label>First name</label>
+								<input placeholder="First Name" type="text" value="Vinoth" readonly>
+							</div>
+							<div class="field">
+								<label>Last name</label>
+								<input placeholder="Last Name" type="text" value="Maruthalingam" disabled>
+							</div>
+						</div>
+						<div class="three fields">
+							<div class="field">
+								<label>Gender</label>
+								<select class="ui dropdown" name="dropdown" value="Male" disabled>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</div>
+							<div class="field">
+								<label>Age</label>
+								<input placeholder="Age" type="text" value="Age" disabled>
+							</div>
+							<div class="field">
+								<label>Expected Grad.
+								</label>
+								<input placeholder="Year" type="text" value="Year" disabled>
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>Email</label>
+								<input name="email" type="text" placeholder="@" value="@" disabled>
+							</div>
+							<div class="field">
+								<label>School</label>
+								<input placeholder="University of ..." type="text" value="University of ..." disabled>
+							</div>
+						</div>	
+						<div class="field">
+							<label>Short personal description</label>
+							<input name="email" type="text" placeholder="My experiences include..." value="My experiences include..." disabled>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>GitHub</label>
+								<input placeholder="GitHub" type="text" value="GitHub"disabled>
+							</div>
+							<div class="field">
+								<label>LinkedIn</label>
+								<input placeholder="LinkedIn" type="text" value = "LinkedIn" disabled>
+							</div>
+						</div>
+						<!-- <div class="ui hidden divider"></div> -->
+						<div class="ui tag labels" id="skills">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="actions">
+				<div class="ui black deny button">
+					Cancel
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
+
+
+	<!-- <div class="ui modal">
+			<div class="header">
+				Profile Picture
+			</div>
+			<div class="image content">
+				<div class="ui medium image profile_pic">
+					<img src="assets/images/avatar/tom.jpg">
+				</div>
+				<div class="description">
+					<div class="ui header">Welcome to HackThe6ix!</div>
+					<p>We've auto-chosen a profile image for you. It's ok, you can edit it. Hover over there. Also, tell me us name and such.</p>
+					<div class="ui form">
+						<div class="two fields">
+							<div class="field">
+								<label>First name</label>
+								<input placeholder="First Name" type="text">
+							</div>
+							<div class="field">
+								<label>Last name</label>
+								<input placeholder="Last Name" type="text">
+							</div>
+							  
+						</div>
+						<div class="three fields">
+							<div class="field">
+								<label>Gender</label>
+								<select class="ui dropdown" name="dropdown">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</div>
+							<div class="field">
+								<label>Age</label>
+								<input placeholder="Age" type="text">
+							</div>
+							<div class="field">
+								<label>Expected Graduation</label>
+								<input placeholder="Year" type="text">
+							</div>
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>Email</label>
+								<input name="email" type="text" placeholder="@">
+							</div>
+							<div class="field">
+								<label>School</label>
+								<input placeholder="University of ..." type="text">
+							</div>
+						</div>	
+						<div class="field">
+							<label>Short personal description</label>
+							<input name="email" type="text" placeholder="My experiences include...">
+						</div>
+						<div class="two fields">
+							<div class="field">
+								<label>GitHub</label>
+								<input placeholder="GitHub" type="text">
+							</div>
+							<div class="field">
+								<label>LinkedIn</label>
+								<input placeholder="LinkedIn" type="text">
+							</div>
+						</div>
+						<div class="ui labeled icon input">
+							<input placeholder="Enter tags" type="text" id='new_skill'>
+							<a class="ui tag label" id='add_skills'>
+								Add Skills
+							</a>
+						</div>
+						<div class="ui hidden divider"></div>
+						<div class="ui tag labels" id="skills">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="actions">
+				<div class="ui black deny button">
+					Cancel
+				</div>
+				<div class="ui positive icon button" id="register_send">
+					Register
+					<i class="checkmark"></i>
+				</div>
+			</div>
+		</div> -->
