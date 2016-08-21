@@ -86,7 +86,7 @@
 
 <div class="ui fluid category search" style="padding-left: 34%;padding-top:4%;">
   <div class="ui icon input" style="margin-top: 2%; margin-bottom: 2%;">
-    <input class="prompt" placeholder="Search Singles for Team...." type="text">
+    <input class="prompt" placeholder="Search Singles for Team...." type="text" ng-model="search.$">
     <i class="search icon"></i>
   </div>
   <div class="results"></div>
@@ -102,7 +102,7 @@
  
 <div class="ui special cards" style="padding-left: 6%; padding-right: 5%;">
 
-  <div class="card" ng-repeat="x in solos">
+  <div class="card" ng-repeat="x in solos | filter: search">
     <!-- <div class="grow"> -->
     <div class="image" style="position: relative; z-index: 1;">
       <img class="blurring" src="{{x.image}}">
@@ -156,7 +156,7 @@
 <div class="ui bottom attached tab segment" data-tab="second">
   <div class="ui special cards" style="padding-left: 6%; padding-right: 5%;">
 
-  <div class="card" ng-repeat="x in teams">
+  <div class="card" ng-repeat="x in teams | filter: search">
     <div class="blurring dimmable image">
       <div class="ui dimmer">
         <div class="content">
