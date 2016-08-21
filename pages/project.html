@@ -55,7 +55,7 @@
 
 <div class="ui fluid category search" style="padding-left: 34%;padding-top:4%;">
   <div class="ui icon input" style="margin-top: 2%; margin-bottom: 2%;">
-    <input class="prompt" placeholder="Search for Projects...." type="text" id="searchTextBox">
+    <input class="prompt" placeholder="Search for Projects...." type="text" id="searchTextBox" ng-model="projectSearch.$">
     <i class="search icon"></i>
   </div>
   <div class="results"></div>
@@ -63,7 +63,7 @@
 
 <div class="ui main text container large">
 
-  <div class="ui card";" ng-repeat="x in groups">
+  <div class="ui card";" ng-repeat="x in groups | filter:projectSearch">
   <div class="content">
     <div class="header">{{"Team " + x.name}}</div>
     <div class="meta">
