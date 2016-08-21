@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
-<link rel="stylesheet" type="text/css" href="myonestyle.css">
+<link rel="stylesheet" type="text/css" href="../css/myonestyle.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.3.0/balloon.min.css">
 </head>
 <script>
@@ -18,12 +18,14 @@
         if (first == "active step"){
           document.getElementById('first').className = " step";
           document.getElementById('second').className = "active step"
-          document.getElementById("response").innerHTML = "<div class='ui form'><div class='field'><label>Project Description</label> <textarea cols='70' name='Project Description'></textarea></div>";
+          document.getElementById("response").innerHTML = "<div class='ui form'><div class='field'><label>Project Description</label> <textarea cols='100' name='Project Description'></textarea></div>";
         }
         else if(second == "active step"){
           document.getElementById('second').className = " step";
           document.getElementById('third').className = "active step"
-          document.getElementById("response").innerHTML = "<div class='ui segment'><p>Go to https://www.kickstarter.com/signup</p></div>";
+          document.getElementById("response").innerHTML = "<div class='ui segment' style="font-size: 15px;
+    font-weight: 500;
+    font-family: helvetica;"><p>Go to https://www.kickstarter.com/signup</p></div>";
           document.getElementById('next').className = "ui animated button"
           document.getElementById('next').innerHTML = 
           "<div tabindex='0' id='next'><div class='visible content' id='extra_content'>Next</div><div class='hidden content'>SUBMIT!</div></div>"
@@ -38,9 +40,9 @@
 
 <div class="ui top fixed menu">
 <div class="right menu" style="margin-left: 41% !important;">
-  <a class="item"><img src="profile.png"></a>
-  <a class="item"><img src="group.png"></a>
-  <a class="item"><img src="project.png"></a>
+  <a class="item"><img src="../images/profile.png"></a>
+  <a class="item" href="index.html"><img src="../images/group.png"></a>
+  <a class="item" href="project.html"><img src="../images/project.png"></a>
   </div>
   <div class="right menu" >
     <a class="item">Sign Up</a>
@@ -128,7 +130,7 @@
       <h1 class="ui header">Submit Project</h1>
       <p>Congratulations! You made it through, and now you have the pleasure of being evaluated infront a bunch of people...</p>
       <!-- class: completed, active -->
-      <div class="ui ordered steps">
+      <div class="ui ordered steps" style="width: 100%;">
         <div class="active step" id="first" value="100">
           <div class="content">
             <div class="title">Link up</div>
@@ -149,14 +151,17 @@
         </div>
       </div>   
        <!-- <div class="ui hidden divider"></div> -->
-       <div class="ui button" tabindex="0" id="next">
-        <div class="visible content" id='extra_content'>Next</div>
-      </div>
-      <div class="ui labeled icon input" id="response">
+       <div class="ui labeled icon input" id="response" style="width: 100%;">
         <div class="ui label">
           http://
         </div>
         <input type="text" placeholder="domain.com">
+      </div>
+       <div class="ui button" tabindex="0" id="next" style="display: block; width: 50%;
+    margin-left: auto;
+    margin-top: 3%;
+    margin-right: auto;">
+        <div class="visible content" id='extra_content'>Next</div>
       </div>
     </div>
     <div class="ui checkbox">
