@@ -9,6 +9,31 @@
 <link rel="stylesheet" type="text/css" href="myonestyle.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.3.0/balloon.min.css">
 </head>
+<script>
+    $( document ).ready(function() {
+      document.getElementById('next').onclick = function (){
+        first = document.getElementById('first').className;
+        second = document.getElementById('second').className;
+        third = document.getElementById('third').className;
+        if (first == "active step"){
+          document.getElementById('first').className = " step";
+          document.getElementById('second').className = "active step"
+          document.getElementById("response").innerHTML = "<div class='ui form'><div class='field'><label>Project Description</label> <textarea cols='70' name='Project Description'></textarea></div>";
+        }
+        else if(second == "active step"){
+          document.getElementById('second').className = " step";
+          document.getElementById('third').className = "active step"
+          document.getElementById("response").innerHTML = "<div class='ui segment'><p>Go to https://www.kickstarter.com/signup</p></div>";
+          document.getElementById('next').className = "ui animated button"
+          document.getElementById('next').innerHTML = 
+          "<div tabindex='0' id='next'><div class='visible content' id='extra_content'>Next</div><div class='hidden content'>SUBMIT!</div></div>"
+        }
+        else{
+          $('.ui.basic.modal').modal('show');
+        }
+      }
+    });
+  </script>
 <body style="background: #DADADA;">
 
 <div class="ui top fixed menu">
@@ -32,7 +57,7 @@
   <div class="results"></div>
 </div>
 
-
+<div class="ui main text container large">
 <div class="ui card" style="margin-top:1%;">
   <div class="content">
     <div class="header">Team Valor</div>
@@ -94,9 +119,72 @@
 <div class="under">
 	View More... 
 </div>
-
+</div>
 
 <div class="ui divider">
+</div>
+
+<div class="ui main text container large">
+      <h1 class="ui header">Submit Project</h1>
+      <p>Congratulations! You made it through, and now you have the pleasure of being evaluated infront a bunch of people...</p>
+      <!-- class: completed, active -->
+      <div class="ui ordered steps">
+        <div class="active step" id="first" value="100">
+          <div class="content">
+            <div class="title">Link up</div>
+            <div class="description">Give the project</div>
+          </div>
+        </div>
+        <div class=" step" id="second">
+          <div class="content">
+            <div class="title">What does it do?</div>
+            <div class="description">Short description</div>
+          </div>
+        </div>
+        <div class=" step" id="third">
+          <div class="content">
+            <div class="title">Start KickStarter?</div>
+            <div class="description">Make Money!</div>
+          </div>
+        </div>
+      </div>   
+       <!-- <div class="ui hidden divider"></div> -->
+       <div class="ui button" tabindex="0" id="next">
+        <div class="visible content" id='extra_content'>Next</div>
+      </div>
+      <div class="ui labeled icon input" id="response">
+        <div class="ui label">
+          http://
+        </div>
+        <input type="text" placeholder="domain.com">
+      </div>
+    </div>
+    <div class="ui checkbox">
+ <!--       -->
+ <div class="ui hidden divider"></div>
+ <div class="ui hidden divider"></div>
+ <div class="ui vertical steps">
+ </div>
+</div>
+
+<div class="ui basic modal">
+  <div class="header">
+    You sure you want to continue?
+  </div>
+  <div class="image content">
+  </div>
+  <div class="actions">
+    <div class="two fluid ui inverted buttons">
+      <div class="ui cancel red basic inverted button">
+        <i class="remove icon"></i>
+        No
+      </div>
+      <div class="ui ok green basic inverted button">
+        <i class="checkmark icon"></i>
+        Yes
+      </div>
+    </div>
+  </div>
 </div>
 
 
