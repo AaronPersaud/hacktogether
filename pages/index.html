@@ -103,16 +103,12 @@
 <div class="ui special cards" style="padding-left: 6%; padding-right: 5%;">
 
   <div class="card" ng-repeat="x in solos">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Friend</div>
-          </div>
-        </div>
-      </div>
-      <img src="{{x.image}}">
+    <!-- <div class="grow"> -->
+    <div class="image" style="position: relative; z-index: 1;">
+      <img class="blurring" src="{{x.image}}">
+      <span id="overlay_text" style="position: relative; top: 0px; z-index: 1;">OVERLAY</span>
     </div>
+    <!-- </div> -->
     <div class="content">
       <div class="header">{{x.name}}</div>
       <div class="meta">
@@ -351,10 +347,7 @@
 
 
 
-<script>  
-$('.special.cards .image').dimmer({
-  on: 'hover'
-});
+<script> 
 
 $('.menu .item')
   .tab()
