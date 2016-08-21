@@ -106,11 +106,11 @@
     <!-- <div class="grow"> -->
     <div class="image" style="position: relative; z-index: 1;">
       <img class="blurring" src="{{x.image}}">
-      <span class="overlay_text" style="position: absolute; top: 0px; z-index: 10;"><button class="overlay_text button ui inverted" style="margin-top:132px; margin-left:93px;">Add Friend</button></span>
+      <span class="overlay_text" style="position: absolute; top: 0px; z-index: 10;"><button class="overlay_text button ui inverted" style="margin-top:132px; margin-left:93px;" ng-click="show_Profile($index)">Profile</button></span>
     </div>
     <!-- </div> -->
     <div class="content">
-      <div class="header">{{x.name}}</div>
+      <div class="header names" >{{x.name}}</div>
       <div class="meta">
         <span class="date">{{x.skill}}</span>
       </div>
@@ -208,6 +208,79 @@
             </div>
         </div>
 
+        <div class="ui modal profile">
+      <div class="image content">
+        <div class="ui medium image profile_pic">
+          <img src="{{pic}}">
+        </div>
+        <div class="description">
+          <div class="ui header">Profile View</div>
+          <div class="ui form">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input placeholder="First Name" type="text" value="Vinoth" readonly>
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input placeholder="Last Name" type="text" value="Maruthalingam" disabled>
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label>Gender</label>
+                <select class="ui dropdown" name="dropdown" value="Male" disabled>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Age</label>
+                <input placeholder="Age" type="text" value="Age" disabled>
+              </div>
+              <div class="field">
+                <label>Expected Grad.
+                </label>
+                <input placeholder="Year" type="text" value="Year" disabled>
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Email</label>
+                <input name="email" type="text" placeholder="@" value="@" disabled>
+              </div>
+              <div class="field">
+                <label>School</label>
+                <input placeholder="University of ..." type="text" value="University of ..." disabled>
+              </div>
+            </div>  
+            <div class="field">
+              <label>Short personal description</label>
+              <input name="email" type="text" placeholder="My experiences include..." value="My experiences include..." disabled>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>GitHub</label>
+                <input placeholder="GitHub" type="text" value="GitHub"disabled>
+              </div>
+              <div class="field">
+                <label>LinkedIn</label>
+                <input placeholder="LinkedIn" type="text" value = "LinkedIn" disabled>
+              </div>
+            </div>
+            <!-- <div class="ui hidden divider"></div> -->
+            <div class="ui tag labels" id="skills">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancel
+        </div>
+      </div>
+    </div>
+
 
 
 <script> 
@@ -218,9 +291,17 @@
 //            }
 //   )
 
-$('.menu .item')
-  .tab()
-;
+$('.menu .item').tab();
+
+// document.getElementByClassName("names").onclick = function(){
+//   console.log("html");
+//   $('.ui.modal').modal('show');
+// }
+
+function show_Profile() {
+  console.log("HERE");
+   $('.ui.modal').modal('show');
+}
 
 </script>
 
