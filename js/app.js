@@ -73,12 +73,12 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
     $scope.name = team.name;
     $scope.src = team.image;
     // $scope.$apply();
-    $('.ui.modal').modal('show');
+    $('.groups').modal('show');
   }
 
   $scope.show_Profile = function(x) {
     var solo = $scope.solos[x];
      $scope.pic = solo.image;
-    $('.ui.modal.profile').modal('show');
+    $('.profile').modal('show');
   }
 }]);
