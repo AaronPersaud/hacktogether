@@ -48,7 +48,7 @@ opacity: 0.8;
 	margin-left: 41% !important;
 }
 
-.blurring:hover {    
+.image:hover .blurring {    
     filter: blur(5px);
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
@@ -56,4 +56,13 @@ opacity: 0.8;
     -ms-filter: blur(5px);
     filter: url(blur.svg#blur);
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');   
+}
+
+.overlay_text {
+    visibility:hidden;
+
+}
+
+.image:hover .overlay_text{
+    visibility: visible;
 }
