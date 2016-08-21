@@ -136,30 +136,13 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="ui bottom attached tab segment" data-tab="second">
   <div class="ui special cards" style="padding-left: 6%; padding-right: 5%;">
 
   <div class="card" ng-repeat="x in teams | filter: search"" >
     <div class="image" style="position: relative; z-index: 1;">
       <img class="blurring" src="{{x.image}}">
-      <span class="overlay_text" style="position: absolute; top: 0px; z-index: 10;"><button class="overlay_text button ui inverted" style="margin-top:121px; margin-left:93px;">Join Team</button></span>
+      <span class="overlay_text" style="position: absolute; top: 0px; z-index: 10;"><button ng-click="viewModal($index)" class="overlay_text register button ui inverted" style="margin-top:121px; margin-left:93px;">Join Team</button></span>
     </div>
     <div class="content">
       <div class="header">{{x.name}}</div>
@@ -184,13 +167,61 @@
 </div>
 </div>
 
+<div class="ui modal">
+            <div class="image content">
+                <div class="ui medium image profile_pic">
+                    <img src="{{src}}">
+                </div>
+                <div class="description">
+                    <div id="name" class="ui header">{{name}}</div>
+                    <div class="ui form">
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Team members</label>
+                                <input placeholder="Name" type="text" style="margin-bottom: 2%;">
+                                <input placeholder="Name" type="text">
+                            </div>
+                            <div class="field">
+                                <label>Team members</label>
+                                <input placeholder="Name" type="text" style="margin-bottom: 2%;">
+                                <input placeholder="Name" type="text">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Interested Topics</label>
+                            <input name="email" type="text" placeholder="What topics does the team likes to pursue...."><!-- <textarea></textarea disabled> -->
+                        </div>
+
+                        <div class="field">
+                            <label>Team Description</label>
+                            <!-- <input name="email" type="text" placeholder="Summarize your team in a few words.... "> --><!-- <textarea></textarea disabled> -->
+
+                            <textarea rows="5" cols="40" placeholder="Summarize your team in a few words.... "></textarea>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Cancel
+                </div>
+            </div>
+        </div>
+
 
 
 <script> 
 
+// $('.register').click(function (){
+//                 console.log("CLICKED")
+//                $('.ui.modal').modal('show');
+//            }
+//   )
+
 $('.menu .item')
   .tab()
 ;
+
 </script>
 
 

@@ -60,5 +60,18 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
                     {name:"Team Art",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
                     {name:"Team Lugia",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
                     {name:"Team Ruby",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
-                  ]
+                  ];
+      $scope.name = null
+      $scope.src = null
+
+  $scope.viewModal = function(x) {
+    console.log("aksjfldkj");
+    console.log(x)
+    var team = $scope.teams[x];
+    console.log(team)
+    $scope.name = team.name;
+    $scope.src = team.image;
+    // $scope.$apply();
+    $('.ui.modal').modal('show');
+  }
 }]);
