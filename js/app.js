@@ -45,21 +45,21 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
 	console.log("TEST")
 	 $scope.solos = [
 
-	 	{name:"Abeenesh U",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
-	 	{name:"Aaron",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"},
-	 	{name:"Vinoth",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/vesh.jpg"},
-	 	{name:"Meyyappan",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/mesh.jpg"},
-	 	{name:"Abeenesh U",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
-	 	{name:"Aaron",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"}
+	 	{linkedin:"abeenesh02",github:"abeenesh",skills:"HTML, CSS, Javascript",grad:"2016",email:"authayak@uwaterloo.ca",school:"University of Waterloo",name:"Abeenesh", age:"22",last:"Uthayan",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
+	 	{linkedin:"aaronpersaud",github:"aaronpersaud",skills:"HTML, CSS, Javascript",grad:"2018",email:"a4persau@uwaterloo.ca",school:"University of Waterloo",name:"Aaron",  age:"21",last:"Persaud",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"},
+	 	{linkedin:"vmarutha",github:"vmarutha",skills:"HTML, CSS, Javascript",grad:"2018",email:"vmarutha@uwaterloo.ca",school:"University of Waterloo",name:"Vinoth",  age:"21",last:"Maruthalingam",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/vesh.jpg"},
+	 	{linkedin:"meyyappan",github:"nachiappan",skills:"HTML, CSS, Javascript",grad:"2018",email:"mnachiap@uwaterloo.ca",school:"University of Waterloo",name:"Meyyappan",  age:"21",last:"Nachiappan",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/mesh.jpg"},
+	 	{linkedin:"abeenesh02",github:"abeenesh",skills:"HTML, CSS, Javascript",grad:"2016",email:"authayak@uwaterloo.ca",school:"University of Waterloo",name:"Abeenesh",  age:"22",last:"Uthayan",skill:"Front-End Developer",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/nesh.jpg"},
+	 	{linkedin:"aaronpersaud",github:"aaronpersaud",skills:"HTML, CSS, Javascript",grad:"2018",email:"a4persau@uwaterloo.ca",school:"University of Waterloo",name:"Aaron",  age:"21",last:"Persaud",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"}
 
 	 ]
 
-   $scope.teams = [{name:"Team Blue Bird",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Molt",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
-                    {name:"Team Zap",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Art",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
-                    {name:"Team Lugia",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
-                    {name:"Team Ruby",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+   $scope.teams = [{name:"Team Blue Bird",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Molt",skill:"Front-end Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {name:"Team Zap",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Art",skill:"Front-end Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {name:"Team Lugia",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Ruby",skill:"Full-Stack Team",school:"University of Waterloo",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
                   ];
       $scope.name = null
       $scope.src = null
@@ -79,6 +79,15 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
   $scope.show_Profile = function(x) {
     var solo = $scope.solos[x];
      $scope.pic = solo.image;
-    $('.profile').modal('show');
+     $scope.name = solo.name;
+     $scope.last = solo.last;
+     $scope.age = solo.age;
+     $scope.school = solo.school;
+     $scope.email = solo.email;
+     $scope.grad = solo.grad;
+     $scope.skills = solo.skills
+     $scope.github = solo.github
+     $scope.linkedin = solo.linkedin;
+     $('.profile').modal('show');
   }
 }]);
