@@ -1,0 +1,49 @@
+.ui.segment[class*="bottom attached"] {
+	margin-bottom: 0rem !important;
+}
+
+.ui.inverted.menu {
+	background: white !important;
+}
+
+.ui.left.sidebar, .ui.right.sidebar {
+	width: auto !important;
+}
+
+.item:hover {
+opacity: 0.8;
+}
+
+.ui.visible.left.sidebar ~ .pusher {
+	transform: translate3d(165px,0,0) !important;
+	width: 87%;
+}
+
+.ui.header {
+	text-align: center;
+	font-size: 70px;
+
+}
+
+.ui.icon.input input {
+    padding-right: 15.67142857em !important;
+}
+
+.ui.attached.tabular.menu {
+    margin-left: 9% !important;
+    margin-right: 0;
+    width: 100%;
+}
+
+.ui.tabular.menu + .attached.segment:not(.top), .ui.tabular.menu + .attached.segment:not(.top) + .attached.segment:not(.top) {
+    border-top: none;
+    margin-left: 9%;
+    margin-top: 0;
+    margin-right: 0;
+    width: 82%;
+    padding-top: 3%;
+}
+
+.right .menu {
+	margin-left: 41% !important;
+}
