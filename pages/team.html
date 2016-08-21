@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Team</title> 
+
+	<link rel="stylesheet" href="https://gitcdn.link/repo/angular/bower-material/master/angular-material.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+ -->    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.js"></script>
+    <script src="../node_modules/angular-material/angular-material.js"></script>
+    <script src="../js/team_app.js"></script>
+
+</head>
+
+<body ng-app="hackTogether" ng-controller="profileCtrl">
+<div>
+	<div style="border:solid; margin:0 auto; text-align:center; width:22%;border-radius: 25px;">
+		<img src="../images/profile.png">
+		<h4>{{name}}</h4>
+		<h4>{{email}}</h4>
+		<h4>{{github}}</h4>
+		<h4>{{linkedin}}</h4>
+	</div>
+</div>
+<br>
+<div style="margin-top:10%">
+<div style="border:solid;height:200px;text-align:center;border-radius: 25px;">
+	<h3>Team Members</h3>
+	<md-chips ng-model="team_members" readonly="true"></md-chips><md-chips>TEST</md-chips>
+	<h2>Need 1 more member</h2>
+</div>
+<br>
+<div style="border:solid;height:200px;border-radius: 25px;">
+	<div style="height:40px; text-align:center">
+	  <h3>Hackathons Attended</h3> 
+	</div>
+	<div style="height:180px; padding-top:10px; text-align:center">
+		<img src="../images/htn.png"  ng-mouseover="tooltip=true" ng-mouseleave="tooltip=false" style="max-width:60%;max-height:60%;margin-right:10px;margin-left:10px;">
+
+		<!-- <div class="tooltip" ng-show="tooltip">Hi..Welcome to Angular JS World.</div> -->
+		<img src="../images/wes.jpg" style="max-width:60%;max-height:60%;margin-left:10px;margin-right:10px;">
+		<img src="../images/mch.png" style="max-width:60%;max-height:60%;margin-left:10px;margin-right:10px;">
+		<img src="../images/uft.png" style="max-width:60%;max-height:60%;margin-left:10px;margin-right:10px;">
+		<img src="../images/ht6.png" style="max-width:60%;max-height:60%;margin-left:10px;margin-right:10px;">
+	</div>
+</div>
+</div>
+
+</body>
+
+</html>
