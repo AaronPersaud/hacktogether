@@ -1,0 +1,14 @@
+.ui.card, .ui.cards > .card {
+	width: 95% !important;
+	margin-left: 2% !important;
+}
+
+.ui.icon.input input {
+    padding-right: 15.67142857em !important;
+}
+
+.under {
+	text-decoration: underline;
+	color: #808080;
+	text-align: center;
+}
