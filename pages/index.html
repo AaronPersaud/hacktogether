@@ -133,7 +133,6 @@
 
 
 
-
 </div>
 
 
@@ -157,7 +156,7 @@
 <div class="ui bottom attached tab segment" data-tab="second">
   <div class="ui special cards" style="padding-left: 6%; padding-right: 5%;">
 
-  <div class="card">
+  <div class="card" ng-repeat="x in teams">
     <div class="blurring dimmable image">
       <div class="ui dimmer">
         <div class="content">
@@ -166,178 +165,24 @@
           </div>
         </div>
       </div>
-      <img src="../images/team1.jpg">
+      <img ng-src="{{x.image}}">
     </div>
     <div class="content">
-      <div class="header">Team Blue Bird</div>
+      <div class="header">{{x.name}}</div>
       <div class="meta">
-        <a>Full-Stack Team</a>
+        <a>{{x.skills}}</a>
       </div>
       <div class="description">
-        Html Css 
+        {{x.description}}
       </div>
     </div>
     <div class="extra content">
       <span class="right floated">
-        Looking for One Member
+        {{x.status}}
       </span>
       <span>
         <i class="user icon"></i>
-        Going to Hack The Six
-      </span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Team</div>
-          </div>
-        </div>
-      </div>
-      <img src="../images/team2.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Team Molt </div>
-      <div class="meta">
-        <span class="date">Front-end Team </span>
-      </div>
-      <div class="description">
-        Html Css 
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Looking for One Member 
-      </span>
-      <span>
-        <i class="user icon"></i>
-        Going to Hack The Six 
-      </span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Team</div>
-          </div>
-        </div>
-      </div>
-      <img src="../images/team1.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Team Zap </div>
-      <div class="meta">
-        <a>Full Stack </a>
-      </div>
-      <div class="description">
-        Html Css
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Looking for One Members
-      </span>
-      <span>
-        <i class="user icon"></i>
-        Going to Hack the Six
-      </span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Team</div>
-          </div>
-        </div>
-      </div>
-      <img src="../images/team2.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Team Art</div>
-      <div class="meta">
-        <a>Front-end</a>
-      </div>
-      <div class="description">
-        Html Css 
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Looking for One Member
-      </span>
-      <span>
-        <i class="user icon"></i>
-        Going to Hack the Six
-      </span>
-    </div>
-  </div>
-<div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Team</div>
-          </div>
-        </div>
-      </div>
-      <img src="../images/team1.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Team Lugia</div>
-      <div class="meta">
-        <a>Full Stack</a>
-      </div>
-      <div class="description">
-        Html Css 
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Looking for One Member
-      </span>
-      <span>
-        <i class="user icon"></i>
-        Going to Hack The Six
-      </span>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="blurring dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Team</div>
-          </div>
-        </div>
-      </div>
-      <img src="../images/team2.jpg">
-    </div>
-    <div class="content">
-      <div class="header">Team Ruby</div>
-      <div class="meta">
-        <span class="date">Full-Stack </span>
-      </div>
-      <div class="description">
-        Html Css 
-      </div>
-    </div>
-    <div class="extra content">
-      <span class="right floated">
-        Looking for One Member
-      </span>
-      <span>
-        <i class="user icon"></i>
-        Going to Hack The Six 
+        {{x.hackathons}}
       </span>
     </div>
   </div>

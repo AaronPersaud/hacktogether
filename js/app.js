@@ -53,4 +53,12 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
 	 	{name:"Aaron",skill:"Full-Stack",description:"Html Css",status:"Looking for a Team",hackathons:"Going to Hack The Six",image:"../images/aesh.jpg"}
 
 	 ]
+
+   $scope.teams = [{name:"Team Blue Bird",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Molt",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {name:"Team Zap",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Art",skill:"Front-end Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                    {name:"Team Lugia",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team1.jpg"},
+                    {name:"Team Ruby",skill:"Full-Stack Team",description:"Html Css",status:"Looking for One Member",hackathons:"Going to Hack The Six",image:"../images/team2.jpg"},
+                  ]
 }]);
