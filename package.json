@@ -6,6 +6,9 @@
   "respository": "https://github.com/AaronPersaud/hacktogether",
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-material": "1.1.0-rc.5"
+    "angular-material": "1.1.0-rc.5",
+    "express": "~4.0.0",
+    "body-parser": "~1.0.1",
+    "mongodb": "~2.2.7"
   }
 }
