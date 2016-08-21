@@ -97,4 +97,19 @@ hackTogether.controller('membersCtrl', ['$scope', function($scope) {
      $scope.linkedin = solo.linkedin;
      $('.profile').modal('show');
   }
+
+  $scope.show_User_Profile = function() {
+    var solo = $scope.solos[x];
+     // $scope.pic = solo.image;
+     // $scope.name = solo.name;
+     // $scope.last = solo.last;
+     // $scope.age = solo.age;
+     // $scope.school = solo.school;
+     // $scope.email = solo.email;
+     // $scope.grad = solo.grad;
+     // $scope.skills = solo.skills
+     // $scope.github = solo.github
+     // $scope.linkedin = solo.linkedin;
+     $('.userProfile').modal('show');
+  }
 }]);

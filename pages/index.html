@@ -72,7 +72,7 @@
 
 <div class="ui top fixed menu">
 <div class="right menu" style="margin-left: 41% !important;">
-  <a class="item"><img src="../images/profile.png"></a>
+  <a class="item" ng-click="show_User_Profile()"><img src="../images/profile.png"></a>
   <a class="item" href="index.html"><img src="../images/group.png"></a>
   <a class="item" href="project.html"><img src="../images/project.png"></a>
   </div>
@@ -277,6 +277,85 @@
       <div class="actions">
         <div class="ui black deny button">
           Cancel
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui modal userProfile">
+      <div class="header">
+        Your Profile
+      </div>
+      <div class="image content">
+        <div class="ui medium image profile_pic">
+          <img src="../images/nesh.jpg">
+        </div>
+        <div class="description">
+          <div class="ui form">
+            <div class="two fields">
+              <div class="field">
+                <label>First name</label>
+                <input placeholder="First Name" type="text">
+              </div>
+              <div class="field">
+                <label>Last name</label>
+                <input placeholder="Last Name" type="text">
+              </div>
+                
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label>Gender</label>
+                <select class="ui dropdown" name="dropdown">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Age</label>
+                <input placeholder="Age" type="text">
+              </div>
+              <div class="field">
+                <label>Expected Grad.</label>
+                <input placeholder="Year" type="text">
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>Email</label>
+                <input name="email" type="text" placeholder="@">
+              </div>
+              <div class="field">
+                <label>School</label>
+                <input placeholder="University of ..." type="text">
+              </div>
+            </div>  
+            <div class="field">
+              <label>Short personal description</label>
+              <input name="email" type="text" placeholder="My experiences include...">
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label>GitHub</label>
+                <input placeholder="GitHub" type="text">
+              </div>
+              <div class="field">
+                <label>LinkedIn</label>
+                <input placeholder="LinkedIn" type="text">
+              </div>
+            </div>
+            <div class="ui hidden divider"></div>
+            <div class="ui tag labels" id="skills">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancel
+        </div>
+        <div class="ui positive icon button" id="save_user_changes">
+          Save
         </div>
       </div>
     </div>
